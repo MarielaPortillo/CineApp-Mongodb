@@ -18,11 +18,12 @@ import { BannersModule } from './banners/banners.module';
 
 @Module({
   //conexion local
-  imports: [PeliculasModule,DetalleModule,HorarioModule,BannersModule,VentasboletoModule,MongooseModule.forRoot('mongodb://localhost:27017/cineApp')],
+  //imports: [PeliculasModule,DetalleModule,HorarioModule,BannersModule,VentasboletoModule,MongooseModule.forRoot('mongodb://localhost:27017/cineApp')],
 
   //conexion remota                                                
   //imports: [PeliculasModule,VentasboletoModule,MongooseModule.forRoot('mongodb+srv://ruth1:1234@cluster0.u1fwz.mongodb.net/CineApp?retryWrites=true&w=majority')],
-  //imports: [PeliculasModule,VentasboletoModule,MongooseModule.forRoot('mongodb+srv://ruth1:iOxfn6kR0CSAC6cN@cluster0.u1fwz.mongodb.net/CineApp?retryWrites=true&w=majority')],
+  imports: [PeliculasModule,DetalleModule,HorarioModule,BannersModule,VentasboletoModule,MongooseModule.forRoot('mongodb+srv://admin:1234@cluster0.u1fwz.mongodb.net/CineApp?retryWrites=true&w=majority')],
+  
   controllers: [AppController],                                                                         
   providers: [AppService],
 })
