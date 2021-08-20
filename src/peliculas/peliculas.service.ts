@@ -21,20 +21,12 @@ export class PeliculasService {
         return await this.peliculasModel.find();
       }
 
-
-     /*async activas(peliculas:Peliculas):Promise<Peliculas[]> { 
-        let peli = [];
-        peli [peliculas.estatus] ='Activa';
+        //metodo para mostrar las peliculas en cartelera
+     async activas():Promise<Peliculas[]> { 
         
-
-        ///const calle = persona.direccion?.calle
-        let peli1 = [peliculas?.estatus];
-        //let peli1 = peliculas?.estatus
-      
+          return await this.peliculasModel.find({estatus:"Activa"});
         
-          return await this.peliculasModel.find(peli);
-        
-      }*/
+      }
 
 
       async uno(id:string):Promise<Peliculas> {

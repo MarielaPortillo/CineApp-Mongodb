@@ -19,19 +19,13 @@ export class Pelicula {
     FechaEstreno: String;*/
 
 
-    @ApiProperty({})
+   
    titulo: String;
-   @ApiProperty({})
    duracion: String;
-   @ApiProperty({})
    clasificacion: String;
-   @ApiProperty({})
    genero: String;
-   @ApiProperty({})
    imagen: String;
-   @ApiProperty({})
-   estatus:String;
-   @ApiProperty({})
+   estatus:String='Activa';
    fechaEstreno:String;
 
 

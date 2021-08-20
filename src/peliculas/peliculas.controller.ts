@@ -17,16 +17,13 @@ export class PeliculasController {
       return this.servicio.todos();
     }
    
-    /*@Get()
-    Obteneractivas( pelicula:Peliculas): Promise<Peliculas[]> {
+    @Get('/activas')
+    Obteneractivas(): Promise<Peliculas[]> {
        
-      pelicula.estatus='Activa';
+     
       
-      return this.servicio.activas(pelicula);
-    }*/
-
-
-
+      return this.servicio.activas();
+    }
 
 
 

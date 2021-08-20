@@ -14,7 +14,7 @@ export interface Peliculas {
    clasificacion: String,
    genero: String,
    imagen: String,
-   estatus: 'Activa',
+   estatus: String,
    fechaEstreno:String,
 
    pelicula_id: ObjectId

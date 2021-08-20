@@ -24,7 +24,7 @@ export class HorarioService {
       async todos():Promise<Horario[]> {
 
        
-        return await this.horarioModel.find().populate({path: 'pelicula'})
+        return await this.horarioModel.find().populate({path: 'Pelicula'})
                //.populate({ path: 'Pelicula'})
                //.exec();
 
