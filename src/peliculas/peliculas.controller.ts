@@ -17,25 +17,11 @@ export class PeliculasController {
       return this.servicio.todos();
     }
    
-    @Get('/activas')
-    Obteneractivas(): Promise<Peliculas[]> {
-       
-     
-      
-      return this.servicio.activas();
-    }
-
-
-
     //Schema -ventasBoletos
     @ApiCreatedResponse({
       description: 'Schema de venta-boletos Post',
       type: Pelicula,
     })
-
-
-
-
     @Post()
     crear(@Body() body: Peliculas): Promise<Peliculas> {
       return this.servicio.crear(body);

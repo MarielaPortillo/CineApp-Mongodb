@@ -1,6 +1,9 @@
 import * as mongoose from 'mongoose';
+import { Schema } from 'mongoose';
+
  
 export const DetalleSchema= new mongoose.Schema({
+  
    director: String,
    actores: String,
    sinopsis: String,
@@ -10,3 +13,5 @@ export const DetalleSchema= new mongoose.Schema({
 
 
 });
+
+//const detalle = mongoose.model('detalle', DetalleSchema);

@@ -1,12 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { ErrorHttpStatusCode } from '@nestjs/common/utils/http-error-by-code.util';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Pelicula } from './pelicula';
-import { PeliculasDTO } from './peliculas.dto';
 import { Peliculas } from './peliculas.interface';
-import { PeliculasModule } from './peliculas.module';
-import { PeliculaSchema } from './schemas/peliculas.schema';
 
 @Injectable()
 export class PeliculasService {
@@ -15,20 +10,9 @@ export class PeliculasService {
     constructor(@InjectModel('Peliculas') private readonly peliculasModel:Model<Peliculas>){}
 
     async todos():Promise<Peliculas[]> {
-
-      
-      
-        return await this.peliculasModel.find();
+        return await this.peliculasModel.find().populate({path:'detalle_id', Model:'Detalles'});
       }
-
-        //metodo para mostrar las peliculas en cartelera
-     async activas():Promise<Peliculas[]> { 
-        
-          return await this.peliculasModel.find({estatus:"Activa"});
-        
-      }
-
-
+     
       async uno(id:string):Promise<Peliculas> {
         return await this.peliculasModel.findOne({_id:id});
       }

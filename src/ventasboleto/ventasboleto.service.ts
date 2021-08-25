@@ -11,7 +11,7 @@ export class VentasboletoService {
     constructor(@InjectModel('Ventasboleto') private readonly ventasboletoModel:Model<Ventasboleto>){}
     async todos():Promise<Ventasboleto[]> {
       
-        return await this.ventasboletoModel.find();
+        return await this.ventasboletoModel.find().populate({path: 'pelicula_id', model:'Peliculas'});
       }
      
       async uno(id:string):Promise<Ventasboleto> {

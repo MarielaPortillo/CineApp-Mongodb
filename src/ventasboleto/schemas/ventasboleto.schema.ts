@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
  
 export const VentasboletoSchema= new mongoose.Schema({
     
-   /* NVenta: Number,
+    NVenta: Number,
     CantidadBoletos: Number,
     Precio:Number,
     Fecha: String,
@@ -11,18 +11,12 @@ export const VentasboletoSchema= new mongoose.Schema({
     Asientos: String,
     Total:Number,
     //Array de referencia de peliculas de venta de boletos
-    Pelicula_id: Array*/
-
-    fecha: String,
-    hora:  String,
-    sala: String,
-    cantidad: String,
-    precio: String,
-    total: String,
-
-    pelicula_id: Array
-
-
-
+    pelicula_id: [
+        {
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Peliculas',
+        }],
    
 });
+
+module.exports = mongoose.model("Ventasboleto", VentasboletoSchema);

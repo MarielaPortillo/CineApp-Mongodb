@@ -18,11 +18,11 @@ export const horarioSchema= new mongoose.Schema({
     //pelicula_id: { type: mongoose.SchemaTypes.ObjectId,ref: "Peliculas" }
 
     pelicula_id: [
-        {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: 'Pelicula',
-        }],
-   
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Peliculas',
+      }],
+ 
 });
 
 
