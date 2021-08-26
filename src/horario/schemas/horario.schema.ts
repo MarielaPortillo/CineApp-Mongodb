@@ -6,7 +6,7 @@ import * as mongoose from 'mongoose';
  
 export const horarioSchema= new mongoose.Schema({
     
-
+    id:Object,
     fecha: String,
     hora:  String,
     sala: String,

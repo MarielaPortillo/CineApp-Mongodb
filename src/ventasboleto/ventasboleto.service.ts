@@ -25,12 +25,12 @@ export class VentasboletoService {
     
       async update(id:string, ventasboleto:Ventasboleto):Promise<Ventasboleto>
       {
-        return await this.ventasboletoModel.findByIdAndUpdate(id,ventasboleto,{new:true});
+        return await this.ventasboletoModel.findOneAndUpdate(ventasboleto,{new:true});
       }
        
       async delete(id:string):Promise<Ventasboleto>
       {
-        return await this.ventasboletoModel.findByIdAndRemove(id);
+        return await this.ventasboletoModel.findOneAndDelete();
       }
 
 

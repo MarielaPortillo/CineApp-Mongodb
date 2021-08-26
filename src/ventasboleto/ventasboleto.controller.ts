@@ -18,7 +18,7 @@ export class VentasboletoController {
     constructor(private readonly servicio: VentasboletoService) {}
         
 
-    @Get()
+    @Get('/todas')
     ObtenerTodos(): Promise<Ventasboleto[]> {
       return this.servicio.todos();
     }
@@ -63,7 +63,7 @@ export class VentasboletoController {
       name: 'CantidadBoletos',
       description: 'Cantidad de boletos',
     })
-    @Post()
+    @Post('/create')
     @ApiHeader({
       name: 'NVentas',
       description: 'Numero de ventas',
@@ -85,7 +85,7 @@ export class VentasboletoController {
     @ApiParam({name: 'id'})
 
 
-    @Put(':id')
+    @Put('/editar/:id')
     actualizar(@Param('id') id,@Body() ventasboleto:Ventasboleto):Promise<Ventasboleto>
     {
       return this.servicio.update(id,ventasboleto);
@@ -93,7 +93,7 @@ export class VentasboletoController {
     
 
     @ApiParam({name: 'id'})
-    @Delete(':id')
+    @Delete('/eliminar/:id')
     delete(@Param('id') id):Promise<Ventasboleto>
     {
       return this.servicio.delete(id);

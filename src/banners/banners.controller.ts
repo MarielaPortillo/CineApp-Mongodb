@@ -14,12 +14,12 @@ export class BannersController {
 
     constructor(private readonly servicio: BannersService) {}
 
-    @Get()
+    @Get('/todos')
     ObtenerTodos(): Promise<Banners[]> {
       return this.servicio.todos();
     }
 
-    @Post("/nuevo")
+    @Post('/create')
     crear(@Body() body: Banners): Promise<Banners> {
       return this.servicio.crear(body);
     }
@@ -28,7 +28,7 @@ export class BannersController {
 
 
     
-    @Put(':id')
+    @Put('/editar/:id')
     actualizar(@Param('id') id,@Body() banners:Banners):Promise<Banners>
     {
       return this.servicio.update(id,banners);
@@ -36,7 +36,7 @@ export class BannersController {
    
 
 
-    @Delete(':id')
+    @Delete('/eliminar/:id')
     delete(@Param('id') id):Promise<Banners>
     {
       return this.servicio.delete(id);

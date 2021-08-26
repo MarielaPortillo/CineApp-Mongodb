@@ -12,7 +12,7 @@ export class PeliculasController {
 
     constructor(private readonly servicio: PeliculasService) {}
 
-    @Get()
+    @Get('todas')
     ObtenerTodos(): Promise<Peliculas[]> {
       return this.servicio.todos();
     }

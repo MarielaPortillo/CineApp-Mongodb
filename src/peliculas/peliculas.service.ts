@@ -24,12 +24,12 @@ export class PeliculasService {
     
       async update(id:number, peliculas:Peliculas):Promise<Peliculas>
       {
-        return await this.peliculasModel.findByIdAndUpdate(id,peliculas,{new:true});
+        return await this.peliculasModel.findOneAndUpdate(peliculas,{new:true});
       }
        
       async delete(id:number):Promise<Peliculas>
       {
-        return await this.peliculasModel.findByIdAndRemove(id);
+        return await this.peliculasModel.findOneAndDelete();
       }
       
 

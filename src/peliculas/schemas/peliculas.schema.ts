@@ -6,6 +6,7 @@ export const PeliculaSchema= new mongoose.Schema({
     //Duracion: Number,
     //Director: String,
     //FechaEstreno: String,
+    id:Object,
     titulo:String, 
     duracion:String,
     clasificacion:String,

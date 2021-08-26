@@ -8,12 +8,12 @@ export class DetalleController {
 
     constructor(private readonly servicio: DetalleService) {}
 
-    @Get()
+    @Get('/todos')
     ObtenerTodos(): Promise<Detalles[]> {
       return this.servicio.todos();
     }
 
-    @Post()
+    @Post('/create')
     crear(@Body() body: Detalles): Promise<Detalles> {
       return this.servicio.crear(body);
     }
@@ -22,7 +22,7 @@ export class DetalleController {
 
 
     
-    @Put(':id')
+    @Put('/editar/:id')
     actualizar(@Param('id') id,@Body() detalle:Detalles):Promise<Detalles>
     {
       return this.servicio.update(id,detalle);
@@ -30,7 +30,7 @@ export class DetalleController {
    
 
 
-    @Delete(':id')
+    @Delete('/eliminar/:id')
     delete(@Param('id') id):Promise<Detalles>
     {
       return this.servicio.delete(id);

@@ -19,12 +19,12 @@ export class BannersService {
     
       async update(id:string, banners:Banners):Promise<Banners>
       {
-        return await this.bannerModel.findByIdAndUpdate(id,banners,{new:true});
+        return await this.bannerModel.findOneAndUpdate(banners,{new:true});
       }
        
-      async delete(id:string):Promise<Banners>
+      async delete(id:number):Promise<Banners>
       {
-        return await this.bannerModel.findByIdAndRemove(id);
+        return await this.bannerModel.findOneAndDelete();
       }
 
 

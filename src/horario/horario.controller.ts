@@ -18,7 +18,7 @@ export class HorarioController {
       
     }*/
 
-    @Get()
+    @Get('/todos')
     ObtenerTodos(horario): Promise<Horario[]> {
      
 
@@ -28,21 +28,8 @@ export class HorarioController {
                   
     }
 
-    
 
-
-
-
-
-
-
-
-
-
-    
-
-
-    @Post()
+    @Post('/create')
     crear(@Body() body: Horario): Promise<Horario> {
       return this.servicio.crear(body);
     }
@@ -51,7 +38,7 @@ export class HorarioController {
 
 
     
-    @Put(':id')
+    @Put('/editar/:id')
     actualizar(@Param('id') id,@Body() horario:Horario):Promise<Horario>
     {
       return this.servicio.update(id,horario);
@@ -59,7 +46,7 @@ export class HorarioController {
    
 
 
-    @Delete(':id')
+    @Delete('/eliminar/:id')
     delete(@Param('id') id):Promise<Horario>
     {
       return this.servicio.delete(id);

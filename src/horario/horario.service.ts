@@ -44,12 +44,12 @@ export class HorarioService {
     
       async update(id:string, horario:Horario):Promise<Horario>
       {
-        return await this.horarioModel.findByIdAndUpdate(id,horario,{new:true});
+        return await this.horarioModel.findOneAndUpdate(horario,{new:true});
       }
        
       async delete(id:string):Promise<Horario>
       {
-        return await this.horarioModel.findByIdAndRemove(id);
+        return await this.horarioModel.findOneAndDelete();
       }
 
 
