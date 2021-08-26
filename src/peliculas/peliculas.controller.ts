@@ -22,7 +22,7 @@ export class PeliculasController {
       description: 'Schema de venta-boletos Post',
       type: Pelicula,
     })
-    @Post()
+    @Post('/create')
     crear(@Body() body: Peliculas): Promise<Peliculas> {
       return this.servicio.crear(body);
     }
@@ -32,9 +32,9 @@ export class PeliculasController {
       name: 'Body de la petición',
       description: 'Body de la petición',
     })
-
+ 
     @ApiParam({name: 'id'})
-    @Put(':id')
+    @Put('/editar/:id')
     actualizar(@Param('id') id,@Body() pelicula:Peliculas):Promise<Peliculas>
     {
       return this.servicio.update(id,pelicula);
@@ -44,7 +44,7 @@ export class PeliculasController {
 
 
     @ApiParam({name: 'id'})
-    @Delete(':id')
+    @Delete('/eliminar/:id')
     delete(@Param('id') id):Promise<Peliculas>
     {
       return this.servicio.delete(id);

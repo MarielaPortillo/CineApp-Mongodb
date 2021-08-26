@@ -19,7 +19,7 @@ export class BannersController {
       return this.servicio.todos();
     }
 
-    @Post()
+    @Post("/nuevo")
     crear(@Body() body: Banners): Promise<Banners> {
       return this.servicio.crear(body);
     }

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, ObjectId } from 'mongoose';
 import { Peliculas } from './peliculas.interface';
 
 @Injectable()
@@ -22,12 +22,12 @@ export class PeliculasService {
         return await nuevo.save();
       }
     
-      async update(id:string, peliculas:Peliculas):Promise<Peliculas>
+      async update(id:number, peliculas:Peliculas):Promise<Peliculas>
       {
         return await this.peliculasModel.findByIdAndUpdate(id,peliculas,{new:true});
       }
        
-      async delete(id:string):Promise<Peliculas>
+      async delete(id:number):Promise<Peliculas>
       {
         return await this.peliculasModel.findByIdAndRemove(id);
       }
