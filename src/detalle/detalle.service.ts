@@ -20,12 +20,12 @@ export class DetalleService {
     
       async update(id:string, detalle:Detalles):Promise<Detalles>
       {
-        return await this.detallesModel.findOneAndUpdate(detalle,{new:true});
+        return await this.detallesModel.findByIdAndUpdate(id, detalle);
       }
        
       async delete(id:string):Promise<Detalles>
       {
-        return await this.detallesModel.findOneAndDelete();
+        return await this.detallesModel.findByIdAndDelete(id);
       }
 }
 

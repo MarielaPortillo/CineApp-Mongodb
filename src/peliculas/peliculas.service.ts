@@ -13,8 +13,8 @@ export class PeliculasService {
         return await this.peliculasModel.find().populate({path:'detalle_id', Model:'Detalles'});
       }
      
-      async uno(id:string):Promise<Peliculas> {
-        return await this.peliculasModel.findOne({_id:id});
+      async uno(id: String):Promise<Peliculas> {
+        return await this.peliculasModel.findById(id);
       }
      
       async crear(peliculas:Peliculas):Promise<Peliculas>{
@@ -22,14 +22,14 @@ export class PeliculasService {
         return await nuevo.save();
       }
     
-      async update(id:number, peliculas:Peliculas):Promise<Peliculas>
+      async update(id:String, peliculas:Peliculas):Promise<Peliculas>
       {
-        return await this.peliculasModel.findOneAndUpdate(peliculas,{new:true});
+        return await this.peliculasModel.findByIdAndUpdate(id, peliculas);
       }
        
-      async delete(id:number):Promise<Peliculas>
+      async delete(id:string):Promise<Peliculas>
       {
-        return await this.peliculasModel.findOneAndDelete();
+        return await this.peliculasModel.findByIdAndDelete(id);
       }
       
 

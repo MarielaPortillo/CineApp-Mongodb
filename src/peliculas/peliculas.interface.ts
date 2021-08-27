@@ -1,7 +1,7 @@
 import { ObjectId } from "mongoose";
 
 export interface Peliculas {
-    id?: number;
+    _id?: String;
     titulo:String, 
     duracion:String,
     clasificacion:String,

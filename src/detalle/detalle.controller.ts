@@ -25,7 +25,9 @@ export class DetalleController {
     @Put('/editar/:id')
     actualizar(@Param('id') id,@Body() detalle:Detalles):Promise<Detalles>
     {
-      return this.servicio.update(id,detalle);
+      const editar = this.servicio.update(id,detalle);
+      console.log(editar);
+      return editar;
     }
    
 

@@ -16,6 +16,12 @@ export class PeliculasController {
     ObtenerTodos(): Promise<Peliculas[]> {
       return this.servicio.todos();
     }
+
+    @ApiParam({name: 'id'})
+    @Get('/uno/:id')
+    Uno(@Param('id') id: string): Promise<Peliculas> {
+      return this.servicio.uno(id);
+    }
    
     //Schema -ventasBoletos
     @ApiCreatedResponse({
