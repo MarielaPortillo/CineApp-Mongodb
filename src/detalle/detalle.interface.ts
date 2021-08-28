@@ -1,6 +1,6 @@
 export interface Detalles {
 
-    Id?: number;
+    _id?: string;
     director: String;
     actores: String;
     sinopsis: String;

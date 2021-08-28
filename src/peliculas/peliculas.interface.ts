@@ -10,7 +10,7 @@ export interface Peliculas {
     estatus:String,
     fechaEstreno:String,
 
-    detalle_id:ObjectId
+    detalle_id:String
    
 
 
